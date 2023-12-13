@@ -1,10 +1,10 @@
 {
   "name": "movie_notes_api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "API to store notes from favorites movies.",
   "main": "index.js",
   "scripts": {
-    "start": "pm2-runtime start ecosystem.config.js --env production",
+    "start": "knex seed:run --specific=tags.js  && knex seed:run --specific=movies.js && knex seed:run --specific=users.js && pm2-runtime start ecosystem.config.js --env production",
     "dev": "nodemon ./src/server.js",
     "migrate": "knex migrate:latest",
     "test": "jest --watch"
