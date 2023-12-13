@@ -4,9 +4,9 @@
   "description": "API to store notes from favorites movies.",
   "main": "index.js",
   "scripts": {
-    "seed_tags": "knex seed:run --specific=tags.js",
-    "seed_movies": "knex seed:run --specific=movies.js",
-    "seed_users": "knex seed:run --specific=movies.js",
+    "prepreprestart": "knex seed:run --specific=tags.js",
+    "preprestart": "knex seed:run --specific=movies.js",
+    "prestart": "knex seed:run --specific=movies.js",
     "start": "pm2-runtime start ecosystem.config.js --env production",
     "dev": "nodemon ./src/server.js",
     "migrate": "knex migrate:latest",
